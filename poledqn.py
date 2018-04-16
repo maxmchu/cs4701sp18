@@ -9,7 +9,7 @@ def runEp(env,printT=False):
     state = env.reset()
     state = np.reshape(state, [1, 4])
     totalreward = 0
-    for t in xrange(500):
+    for t in range(500):
         if printT:
             env.render()
         action = nn.chooseAction(state)
@@ -26,7 +26,7 @@ def runEp(env,printT=False):
 avgReward = np.zeros(200)
 for i in range(10000): # Number of episodes s
     score =runEp(env,True)
-    print 'Episode %f, Score: %f' %(i,score)
+    print ('Episode %f, Score: %f' %(i,score))
 
 
 

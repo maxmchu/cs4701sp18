@@ -7,7 +7,7 @@ env = gym.make('LunarLander-v2')
 def runEp(env,pars1,pars2,printT):
     observation = env.reset()
     totalreward = 0
-    for _ in xrange(400):
+    for _ in range(400):
         if printT:
             env.render()
         policy = np.matmul(np.matmul(pars1,pars2),observation)
@@ -34,7 +34,7 @@ for i in range(1000):
         vals[t]= runEp(env,currentPars1,currentPars2,True)
     currentReward = np.average(vals)
     if currentReward > reward:
-        print currentReward
+        print(currentReward)
         reward = currentReward
         parameters1 = currentPars1
         parameters2 = currentPars2
@@ -43,7 +43,7 @@ for i in range(1000):
 
 
 for i in range(10000):
-    print runEp(env,parameters1,parameters2,True)
+    print(runEp(env,parameters1,parameters2,True))
 
 
 
